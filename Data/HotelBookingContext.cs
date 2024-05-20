@@ -16,7 +16,7 @@ namespace HotelBooking.Data
         public DbSet<TipoHabitacion> TiposHabitacion { get; set; }
         public DbSet<Reservacion> Reservaciones { get; set; }
         public DbSet<Empleado> Empleados { get; set; }
-
+         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
