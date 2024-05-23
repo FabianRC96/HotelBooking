@@ -18,7 +18,7 @@ namespace HotelBooking.Models
         [StringLength(50)]
         public string Posicion { get; set; }
 
-        [Required]
+        [ForeignKey("Usuario")]
         public int IdUsuario { get; set; } // Forean Key
     }
 }

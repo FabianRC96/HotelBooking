@@ -1,0 +1,24 @@
+﻿@page
+@model HotelBooking.Pages.Empleados.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Empleado";
+}
+
+<h1>Eliminar Empleado</h1>
+
+<h3>¿Está seguro de que desea eliminar este empleado?</h3>
+<div>
+    <form method="post">
+        <input type="hidden" asp-for="Empleado.IdEmpleado" />
+        <div class="form-group">
+            <label asp-for="Empleado.NombreEmpleado"></label>
+            <p>@Model.Empleado.NombreEmpleado</p>
+        </div>
+        <div class="form-group">
+            <label asp-for="Empleado.Posicion"></label>
+            <p>@Model.Empleado.Posicion</p>
+        </div>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

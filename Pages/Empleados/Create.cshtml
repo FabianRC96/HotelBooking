@@ -1,0 +1,25 @@
+﻿@page
+@model HotelBooking.Pages.Empleados.CreateModel
+@{
+    ViewData["Title"] = "Crear Nuevo Empleado";
+}
+
+<h1>Crear Nuevo Empleado</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Empleado.NombreEmpleado" class="control-label"></label>
+                <input asp-for="Empleado.NombreEmpleado" class="form-control" />
+                <span asp-validation-for="Empleado.NombreEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Empleado.Posicion" class="control-label"></label>
+                <input asp-for="Empleado.Posicion" class="form-control" />
+                <span asp-validation-for="Empleado.Posicion" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+    </div>
+</div>
