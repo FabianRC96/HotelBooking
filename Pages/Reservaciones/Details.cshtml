@@ -1,0 +1,47 @@
+﻿@page
+@model HotelBooking.Pages.Reservaciones.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Reservación</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Id Cliente
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Reservacion.Cliente.Nombre @Model.Reservacion.Cliente.Apellido
+        </dd>
+        <dt class="col-sm-2">
+            Id Habitacion
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Reservacion.Habitacion.Numero
+        </dd>
+        <dt class="col-sm-2">
+            Fecha Entrada
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Reservacion.FechaEntrada.ToString("d")
+        </dd>
+        <dt class="col-sm-2">
+            Fecha Salida
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Reservacion.FechaSalida.ToString("d")
+        </dd>
+        <dt class="col-sm-2">
+            Total Pago
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Reservacion.TotalPago.ToString("C")
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Index" class="btn btn-primary">Regresar</a>
+</div>
