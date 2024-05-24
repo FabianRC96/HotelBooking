@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using HotelBooking.Data;
 using HotelBooking.Models;
 
-namespace HotelBooking.Pages.Habitaciones
+namespace HotelBooking.Pages.TiposHabitacion
 {
     public class DeleteModel : PageModel
     {
@@ -17,7 +17,7 @@ namespace HotelBooking.Pages.Habitaciones
         }
 
         [BindProperty]
-        public Habitacion Habitacion { get; set; }
+        public TipoHabitacion TipoHabitacion { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -26,9 +26,9 @@ namespace HotelBooking.Pages.Habitaciones
                 return NotFound();
             }
 
-            Habitacion = await _context.Habitaciones.FirstOrDefaultAsync(m => m.IdHabitacion == id);
+            TipoHabitacion = await _context.TiposHabitacion.FirstOrDefaultAsync(m => m.IdTipo == id);
 
-            if (Habitacion == null)
+            if (TipoHabitacion == null)
             {
                 return NotFound();
             }
@@ -42,11 +42,11 @@ namespace HotelBooking.Pages.Habitaciones
                 return NotFound();
             }
 
-            Habitacion = await _context.Habitaciones.FindAsync(id);
+            TipoHabitacion = await _context.TiposHabitacion.FindAsync(id);
 
-            if (Habitacion != null)
+            if (TipoHabitacion != null)
             {
-                _context.Habitaciones.Remove(Habitacion);
+                _context.TiposHabitacion.Remove(TipoHabitacion);
                 await _context.SaveChangesAsync();
             }
 
