@@ -17,6 +17,9 @@
         <div class="form-group">
             <label asp-for="Empleado.Posicion"></label>
             <p>@Model.Empleado.Posicion</p>
+         <div class="form-group">
+            <label asp-for="Empleado.IdUsuario"></label>
+            <p>@Model.Empleado.IdUsuario</p>
         </div>
         <button type="submit" class="btn btn-danger">Eliminar</button>
         <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>

@@ -16,6 +16,7 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Posición</th>
+            <th>IdUsuario</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -26,10 +27,11 @@
                 <td>@empleado.IdEmpleado</td>
                 <td>@empleado.NombreEmpleado</td>
                 <td>@empleado.Posicion</td>
+                <td>@empleado.IdUsuario</td>
                 <td>
-                    <a asp-page="./Details" asp-route-id="@empleado.IdEmpleado">Detalles</a> |
-                    <a asp-page="./Edit" asp-route-id="@empleado.IdEmpleado">Editar</a> |
-                    <a asp-page="./Delete" asp-route-id="@empleado.IdEmpleado">Eliminar</a>
+                    <a asp-page="./Details" asp-route-id="@empleado.IdEmpleado" class="btn btn-success">Details</a>
+                    <a asp-page="./Edit" asp-route-id="@empleado.IdEmpleado" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@empleado.IdEmpleado" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         }
