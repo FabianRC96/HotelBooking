@@ -1,0 +1,42 @@
+﻿@page
+@model HotelBooking.Pages.Habitaciones.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear</h1>
+
+<h4>Nueva Habitacion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Habitacion.Numero" class="control-label"></label>
+                <input asp-for="Habitacion.Numero" class="form-control" />
+                <span asp-validation-for="Habitacion.Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Habitacion.Piso" class="control-label"></label>
+                <input asp-for="Habitacion.Piso" class="form-control" />
+                <span asp-validation-for="Habitacion.Piso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Habitacion.IdTipo" class="control-label"></label>
+                <input asp-for="Habitacion.IdTipo" class="form-control" />
+                <span asp-validation-for="Habitacion.IdTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Habitacion.Precio" class="control-label"></label>
+                <input asp-for="Habitacion.Precio" class="form-control" />
+                <span asp-validation-for="Habitacion.Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
