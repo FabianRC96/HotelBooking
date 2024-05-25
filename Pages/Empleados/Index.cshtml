@@ -1,0 +1,39 @@
+﻿@page
+@model HotelBooking.Pages.Empleados.IndexModel
+@{
+    ViewData["Title"] = "Lista de Empleados";
+}
+
+<h1>Lista de Empleados</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Crear Nuevo</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Posición</th>
+            <th>IdUsuario</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var empleado in Model.Empleados)
+        {
+            <tr>
+                <td>@empleado.IdEmpleado</td>
+                <td>@empleado.NombreEmpleado</td>
+                <td>@empleado.Posicion</td>
+                <td>@empleado.IdUsuario</td>
+                <td>
+                    <a asp-page="./Details" asp-route-id="@empleado.IdEmpleado" class="btn btn-success">Details</a>
+                    <a asp-page="./Edit" asp-route-id="@empleado.IdEmpleado" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@empleado.IdEmpleado" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

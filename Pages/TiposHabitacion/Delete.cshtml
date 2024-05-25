@@ -1,0 +1,33 @@
+﻿@page
+@model HotelBooking.Pages.TiposHabitacion.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar</h1>
+
+<h3>¿Está Seguro?</h3>
+<div>
+    <h4>Tipo de Habitación</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoHabitacion.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoHabitacion.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoHabitacion.Capacidad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoHabitacion.Capacidad)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="TipoHabitacion.IdTipo" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-primary">Regresar</a>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+﻿@page
+@model HotelBooking.Pages.Clientes.IndexModel
+
+<h1>Clientes</h1>
+<p>
+    <a asp-page="Create" class="btn btn-primary">Crear Nuevo</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Acciones</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Cliente)
+        {
+            <tr>
+                <td>@item.IdCliente</td>
+                <td>@item.Nombre</td>
+                <td>@item.Apellido</td>
+                <td>@item.Email</td>
+                <td>@item.Telefono</td>
+                <td>
+                    <a asp-page="./Details" asp-route-id="@item.IdCliente" class="btn btn-success">Details</a>
+                    <a asp-page="./Edit" asp-route-id="@item.IdCliente" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.IdCliente" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,40 @@
+﻿@page
+@model HotelBooking.Pages.Reservaciones.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Reservaciones</h1>
+<p>
+    <a asp-page="Create" class="btn btn-primary">Crear Nueva</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id Cliente</th>
+            <th>Id Habitacion</th>
+            <th>Fecha Entrada</th>
+            <th>Fecha Salida</th>
+            <th>Total Pago</th>
+            <th>Acciones</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Reservacion)
+        {
+            <tr>
+                <td>@item.Cliente.Nombre @item.Cliente.Apellido</td>
+                <td>@item.Habitacion.Numero</td>
+                <td>@item.FechaEntrada</td>
+                <td>@item.FechaSalida</td>
+                <td>@item.TotalPago.ToString("C")</td>
+                <td>
+                    <a asp-page="Details" asp-route-id="@item.IdReservacion" class="btn btn-success">Details</a>
+                    <a asp-page="Edit" asp-route-id="@item.IdReservacion" class="btn btn-warning">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@item.IdReservacion" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

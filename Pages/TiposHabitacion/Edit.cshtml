@@ -1,0 +1,34 @@
+﻿@page
+@model HotelBooking.Pages.TiposHabitacion.EditModel
+@{
+    ViewData["Title"] = "Edit Tipo de Habitación";
+}
+
+<h1>Editar Tipo de Habitación</h1>
+
+<h4>Tipo de Habitacion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="TipoHabitacion.Descripcion" class="control-label"></label>
+                <input asp-for="TipoHabitacion.Descripcion" class="form-control" />
+                <span asp-validation-for="TipoHabitacion.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoHabitacion.Capacidad" class="control-label"></label>
+                <input asp-for="TipoHabitacion.Capacidad" class="form-control" />
+                <span asp-validation-for="TipoHabitacion.Capacidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="TipoHabitacion.IdTipo" />
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index" class="btn btn-primary">Regresar</a>
+</div>

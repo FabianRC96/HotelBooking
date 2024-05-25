@@ -1,0 +1,39 @@
+﻿@page
+@model HotelBooking.Pages.Habitaciones.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Habitacion.IdHabitacion" />
+
+    <div class="form-group">
+        <label asp-for="Habitacion.Numero" class="control-label"></label>
+        <input asp-for="Habitacion.Numero" class="form-control" />
+        <span asp-validation-for="Habitacion.Numero" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Habitacion.Piso" class="control-label"></label>
+        <input asp-for="Habitacion.Piso" class="form-control" />
+        <span asp-validation-for="Habitacion.Piso" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Habitacion.IdTipo" class="control-label"></label>
+        <input asp-for="Habitacion.IdTipo" class="form-control" />
+        <span asp-validation-for="Habitacion.IdTipo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Habitacion.Precio" class="control-label"></label>
+        <input asp-for="Habitacion.Precio" class="form-control" />
+        <span asp-validation-for="Habitacion.Precio" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-success" />
+    </div>
+</form>
+<div>
+    <a asp-page="./Index" class="btn btn-primary">Regresar a la lista</a>
+</div>

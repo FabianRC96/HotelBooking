@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+using HotelBooking.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
+>>>>>>> test
 namespace HotelBooking
 {
     public class Program
@@ -8,6 +15,14 @@ namespace HotelBooking
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+<<<<<<< HEAD
+=======
+            builder.Services.AddDbContext<HotelBookingContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("HotelBookingDB")));
+
+            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                 .AddEntityFrameworkStores<HotelBookingContext>();
+>>>>>>> test
 
             var app = builder.Build();
 
@@ -23,7 +38,11 @@ namespace HotelBooking
             app.UseStaticFiles();
 
             app.UseRouting();
+<<<<<<< HEAD
 
+=======
+            app.UseAuthentication();
+>>>>>>> test
             app.UseAuthorization();
 
             app.MapRazorPages();
