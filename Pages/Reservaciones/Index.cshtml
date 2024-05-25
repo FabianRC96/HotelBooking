@@ -26,8 +26,8 @@
             <tr>
                 <td>@item.Cliente.Nombre @item.Cliente.Apellido</td>
                 <td>@item.Habitacion.Numero</td>
-                <td>@item.FechaEntrada.ToString("d")</td>
-                <td>@item.FechaSalida.ToString("d")</td>
+                <td>@item.FechaEntrada</td>
+                <td>@item.FechaSalida</td>
                 <td>@item.TotalPago.ToString("C")</td>
                 <td>
                     <a asp-page="Details" asp-route-id="@item.IdReservacion" class="btn btn-success">Details</a>

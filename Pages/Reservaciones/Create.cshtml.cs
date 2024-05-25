@@ -40,10 +40,7 @@ namespace HotelBooking.Pages.Reservaciones
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+             
 
             _context.Reservaciones.Add(Reservacion);
             await _context.SaveChangesAsync();

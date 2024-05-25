@@ -24,6 +24,6 @@ namespace HotelBooking.Models
         public DateTime FechaSalida { get; set; }
 
         [DataType(DataType.Currency)]
-        public decimal TotalPago { get; set; }
+        public double TotalPago { get; set; }
     }
 }

@@ -38,17 +38,14 @@ namespace HotelBooking.Pages.Reservaciones
                 return NotFound();
             }
 
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "IdCliente", "NombreCompleto");
+            ViewData["IdCliente"] = new SelectList(_context.Clientes, "IdCliente", "Nombre");
             ViewData["IdHabitacion"] = new SelectList(_context.Habitaciones, "IdHabitacion", "Numero");
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            
 
             _context.Attach(Reservacion).State = EntityState.Modified;
 
